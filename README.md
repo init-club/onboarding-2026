@@ -1,8 +1,15 @@
-# Init Club — Onboarding Tasks (2026)
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/init-club/.github/main/assets/logo-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/init-club/.github/main/assets/logo-light.svg">
+    <img alt="Init Club Logo"
+         src="https://raw.githubusercontent.com/init-club/.github/main/assets/logo-light.svg"
+         width="300">
+  </picture>
+    <h1>Onboarding Tasks for Init Club Members - 2026</h1>
+</div>
 
 ## Welcome
-
-Onboarding Tasks — Init Club (2026)
 
 This repository contains documentation-first onboarding tasks for new contributors. Each task folder's README describes the objective, acceptance criteria, helpful references, and submission instructions.
 
