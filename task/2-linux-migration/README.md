@@ -7,7 +7,6 @@ In this task, you will set up a Linux system and learn how to operate inside it 
 
 You are expected to make your own installation decisions, follow official documentation, and understand what you configure — not just run commands blindly.
 
----
 
 # What This Task Builds
 
@@ -15,7 +14,6 @@ You are expected to make your own installation decisions, follow official docume
 - Confidence working in Linux environments  
 - Comfort using the terminal for system tasks  
 
----
 
 # Core Areas
 
@@ -25,7 +23,6 @@ You will practice:
 - Configuring a usable development environment  
 - Verifying your installation using terminal tools  
 
----
 
 # Difficulty Levels
 
@@ -37,7 +34,6 @@ Complete the basics:
 - Confirm the system works using simple terminal commands  
   (navigation, package updates, system info tools, etc.)
 
----
 
 ## Advanced Level
 
@@ -50,7 +46,6 @@ Go further:
   - Package management  
   - User configuration  
 
----
 
 # Pre-requisites
 
@@ -58,7 +53,6 @@ Go further:
 - Basic familiarity with using a computer  
 - Willingness to read official documentation  
 
----
 
 # Safety First 
 
@@ -70,7 +64,6 @@ Before making OS changes:
 
 No task here is worth losing your files.
 
----
 
 # Choosing a Setup Method
 
@@ -86,7 +79,6 @@ Pick what suits your comfort level:
 - Minimal risk  
 - Great for development work  
 
----
 
 # Suggested Workflow
 
@@ -98,7 +90,6 @@ Pick what suits your comfort level:
    - Set up your user environment  
 4. Verify everything works using terminal commands
 
----
 
 # Verification Step
 
@@ -108,7 +99,6 @@ fastfetch
 
 This confirms your Linux environment is running correctly.
 
----
 
 # Expected Submission
 
@@ -120,7 +110,6 @@ A clear image showing `neofetch` running in your Linux terminal.
 ### 2️⃣ GitHub Link
 Your repository or PR containing your submission.
 
----
 
 # Evaluation Criteria
 
@@ -131,7 +120,6 @@ Reviewers will check:
 - Screenshot is valid and clear  
 - Submission link works  
 
----
 
 # What Success Looks Like
 
@@ -141,7 +129,6 @@ By finishing this task, you should:
 - Understand how your OS affects development  
 - Know how to install and manage software in Linux  
 
----
 
 # Final Reminder
 

@@ -3,44 +3,37 @@
 ## Purpose
 **Goal:** Learn practical debugging by diagnosing and fixing a broken interaction between a frontend and a backend service. This task builds confidence in tracing issues across the client–server boundary.
 
----
 
 ## Description of the Challenge
 You are given a small web app where the frontend and backend are not communicating correctly. Your job is to investigate, identify the fault, and fix it so data flows as expected.
 
----
 
 ## Sub-problems
 - Inspecting network requests  
 - Fixing incorrect API communication  
 
----
 
 ## Easy Level
 - Identify why the submit button fails  
 - Fix the communication issue so requests succeed  
 
----
 
 ## Advanced Level
 - Use Browser DevTools (Network, Console, Application tabs) to debug  
 - Ensure data is correctly sent, received, and stored  
 
----
 
 ## Pre-requisites
 - Basic HTML knowledge  
 - Basic JavaScript knowledge  
 - Familiarity with how web requests work (high-level)  
 
----
 
 ## Learning Outcomes
 - Stronger debugging skills  
 - Understanding client–server interaction  
 - Confidence using browser developer tools  
 
----
 
 ## What to Do
 1. Reproduce the bug consistently.  
@@ -49,7 +42,6 @@ You are given a small web app where the frontend and backend are not communicati
 4. Verify backend responses and error messages.  
 5. Apply a fix and retest until the flow works reliably.  
 
----
 
 ## Expected Submission
 - A Pull Request that fixes the issue  
@@ -58,17 +50,15 @@ You are given a small web app where the frontend and backend are not communicati
   - How you found it  
   - What you changed  
 
----
 
 ## Evaluation Criteria
 - Correctness of the fix  
 - Clear debugging approach  
 - Evidence of using DevTools effectively  
 
----
 
 ## Good Practices
 - Change one thing at a time and retest  
 - Read error messages carefully  
 - Avoid “random fixes” without understanding the cause  
-- Keep your explanation simple and reproducible  
+- Keep your explanation simple and reproducible
