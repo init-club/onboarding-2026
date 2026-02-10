@@ -1,79 +1,152 @@
-# Task 1.1 — The Linux Migration
+# Task — Linux Migration 
 
-## Purpose
-- Install and configure a Linux environment so you understand the software runtime and can control the platform where your tools run.
-- This document explains what to do, how to approach it safely, and where to find authoritative guidance. It does not include copy-paste commands or full scripts; implement the steps yourself and consult the official documentation linked below.
+## Goal
 
-## Outcome expectations
-- Choose one of the following tiers:
-  - Gold: Install Linux as a dual-boot alongside Windows.
-  - Silver: Install and configure WSL2 (Windows Subsystem for Linux).
-  - Bronze: Install Linux in a VM or via a persistent live USB.
-- Deliverable: evidence that a system-info tool such as `neofetch` ran in your terminal (for example, a screenshot) and a short README describing choices and verification steps.
+Developers work best when they understand and control their environment.  
+In this task, you will set up a Linux system and learn how to operate inside it confidently.
 
-## Important safety note
-- Back up important files to external storage before modifying partitions or installing a new OS.
-- If you are unfamiliar with partitioning or bootloader concepts, consider using a VM or WSL2 until you are comfortable.
+You are expected to make your own installation decisions, follow official documentation, and understand what you configure — not just run commands blindly.
 
-## Choose a distribution
-- Pick a beginner-friendly distribution and consult its install guide:
-  - Ubuntu LTS — official Ubuntu installation documentation.
-  - Pop!_OS — vendor installation guide.
-  - Fedora — Fedora Project installation instructions.
-- Tip: check hardware compatibility, especially GPU and Wi‑Fi chipset, before selecting a distribution.
+---
 
-## Installation paths
-- Dual-boot (Gold): provides native performance; requires resizing partitions and configuring EFI/GRUB.
-- WSL2 (Silver): works well on Windows without partition changes.
-- VM or Live USB (Bronze): safest option for beginners; no changes to your primary OS.
+# What This Task Builds
 
-### High-level dual-boot workflow
-1. Back up data and create Windows recovery media if desired.
-2. Shrink the Windows partition to free space for Linux; leave at least 30–50 GB.
-3. Create installation media (USB) using the distro's recommended imaging tool.
-4. Boot the installer in UEFI mode and follow guided or manual partitioning options.
-5. Create sensible partitions: EFI (use existing if present), root `/`, optional `home`, and swap or swap file.
-6. Install the bootloader; most installers configure GRUB to detect other operating systems.
-7. Reboot and verify you can select and boot both operating systems.
+- Awareness of how operating systems support development  
+- Confidence working in Linux environments  
+- Comfort using the terminal for system tasks  
 
-### High-level WSL2 workflow
-1. Enable the Windows features required for WSL2 using Microsoft's documentation.
-2. Install a distribution from the Microsoft Store or import an image.
-3. Set WSL2 as the default and configure your shell and packages inside the distribution.
-4. Configure integration with Windows terminal applications if desired.
+---
 
-## Post-install checks and basic setup
-- Boot verification: confirm you can start the new Linux instance and, if dual-booting, that Windows still boots.
-- Networking: confirm Wi‑Fi or ethernet connectivity and that you can update packages.
-- Package manager: perform system updates and install basic developer tools such as `git` and a code editor.
-- User configuration: create a non-root user if one was not created by the installer, set up SSH keys, and configure your shell environment.
-- Terminal check: run your system-info tool and capture a screenshot showing distribution and system details.
+# Core Areas
 
-## What to include in your submission
-- Create a directory for your submission: `task/<your-github-username>/1-linux-migration/`
-- Include:
-  - `README.md` — 1–2 paragraphs describing the distribution, installation path, partition sizes or notable choices, and any problems you solved.
-  - `neofetch-screenshot.png` or equivalent — clearly shows the distribution and system summary.
-  - Optional: `post-install.txt` listing a few important commands you ran and packages you installed.
+You will practice:
 
-## How reviewers will verify
-- Confirm the screenshot clearly shows the distribution and terminal output.
-- Read your task README to ensure steps are reproducible and troubleshooting notes are included.
-- If you claim dual-boot, provide a short note about how you verified both systems boot.
+- Selecting an appropriate Linux setup method  
+- Configuring a usable development environment  
+- Verifying your installation using terminal tools  
 
-## Where to find authoritative help
-- Official installation guides for Ubuntu, Pop!_OS, and Fedora.
-- Microsoft WSL documentation.
-- Distro documentation and reputable tutorials on partitioning, UEFI, and bootloader concepts such as GRUB.
+---
 
-## Troubleshooting tips
-- If Windows does not appear in the boot menu after install, check whether an EFI entry was created and review firmware boot order.
-- If Wi‑Fi or GPU drivers are missing, search for vendor-supplied drivers or community guides for your hardware model.
-- When uncertain, prefer a VM or WSL2 until you are comfortable modifying disk partitions.
+# Difficulty Levels
 
-## Final checklist before submitting
-- [ ] Backed up important data.
-- [ ] Installed Linux via dual-boot, WSL2, or VM.
-- [ ] Captured a clear screenshot of the system-info tool showing the distribution.
-- [ ] Wrote a short `README.md` describing choices and verification.
-- [ ] Placed the files under `task/<your-github-username>/1-linux-migration/` and opened a PR with verification steps.
+## Easy Level
+
+Complete the basics:
+
+- Install Linux using **Dual Boot or WSL**
+- Confirm the system works using simple terminal commands  
+  (navigation, package updates, system info tools, etc.)
+
+---
+
+## Advanced Level
+
+Go further:
+
+- Use Linux as your **main development environment**
+- Explore:
+  - File permissions  
+  - Running processes  
+  - Package management  
+  - User configuration  
+
+---
+
+# Pre-requisites
+
+- A personal laptop or PC  
+- Basic familiarity with using a computer  
+- Willingness to read official documentation  
+
+---
+
+# Safety First 
+
+Before making OS changes:
+
+- Back up important data  
+- Understand what disk partitioning means if attempting dual boot  
+- If unsure, start with WSL — it’s safer and reversible  
+
+No task here is worth losing your files.
+
+---
+
+# Choosing a Setup Method
+
+Pick what suits your comfort level:
+
+### Dual Boot
+- Best performance  
+- Lets you switch between Windows and Linux  
+- Requires disk space management  
+
+### WSL (Windows Subsystem for Linux)
+- Runs Linux inside Windows  
+- Minimal risk  
+- Great for development work  
+
+---
+
+# Suggested Workflow
+
+1. Choose a Linux distribution (Ubuntu and Fedora are beginner-friendly)
+2. Follow the **official installation guide** for your method
+3. After installation:
+   - Update packages  
+   - Install basic tools (git, editor, etc.)  
+   - Set up your user environment  
+4. Verify everything works using terminal commands
+
+---
+
+# Verification Step
+
+Run a system-info tool such as:
+fastfetch
+
+
+This confirms your Linux environment is running correctly.
+
+---
+
+# Expected Submission
+
+Inside your submission folder include:
+
+### 1️⃣ Screenshot
+A clear image showing `neofetch` running in your Linux terminal.
+
+### 2️⃣ GitHub Link
+Your repository or PR containing your submission.
+
+---
+
+# Evaluation Criteria
+
+Reviewers will check:
+
+- Linux installed successfully  
+- Environment configured correctly  
+- Screenshot is valid and clear  
+- Submission link works  
+
+---
+
+# What Success Looks Like
+
+By finishing this task, you should:
+
+- Comfortably open and use a Linux terminal  
+- Understand how your OS affects development  
+- Know how to install and manage software in Linux  
+
+---
+
+# Final Reminder
+
+Don’t rush the install.  
+Read guides carefully.  
+Understand each step.
+
+The goal is learning, not just finishing.
