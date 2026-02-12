@@ -7,7 +7,7 @@ I completed the typing test.
 - Accuracy: 98%
 
 ## Typing Test Proof
-![Typing Test](typing-test.png)
+![Typing Test](speedtest.png)
 
 
 ## How to Verify
