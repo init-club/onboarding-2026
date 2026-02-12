@@ -47,8 +47,30 @@ You are given a small web app where the frontend and backend are not communicati
 - A Pull Request that fixes the issue  
 - Short notes in the PR description explaining:
   - What was wrong  
-  - How you found it  
-  - What you changed  
+  - How you found it   
+  - What you changed   
+
+## How to run this locally
+
+Prerequisites: Node.js v14+ installed.
+
+1. Install dependencies and start the server:
+
+```bash
+cd task/4-broken-webapp
+npm install
+npm start
+```
+
+2. Open the app in your browser:
+
+- Main Page: http://localhost:3000
+
+Notes:
+- The backend is implemented in `server.js` and stores submissions in memory.
+- The `easy.html` and `advanced.html` pages intentionally include client-side bugs for the debugging; use DevTools (F12) → Network/Console to inspect requests.
+
+`   
 
 
 ## Evaluation Criteria

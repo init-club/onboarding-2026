@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task - 4 - Broken Web App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <a href="index.html" class="back-link">← Back to Main Page</a>
+    <center><h1> Contact Form</h1></center>
+
+    <form id="contactForm">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Init Club" required />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="temp@gmail.com" required />
+      </div>
+      <div>
+        <label for="message">Message (optional)</label>
+        <textarea id="message" placeholder="Welcome to Init Club"></textarea>
+      </div>
+      <button type="submit" class="primary">Submit</button>
+    </form>
+
+    <div id="status"></div>
+
+    <div id="submissions">
+      <h3>Stored Submissions</h3>
+      <p style="font-size:0.85rem; color:#888;">
+        Click the button below to fetch all stored entries from the server.
+      </p>
+      <button class="primary" onclick="loadSubmissions()" style="margin-bottom:1rem;">
+        Load Submissions
+      </button>
+      <div id="entries"></div>
+    </div>
+
+    <div class="hint">
+      <details>
+        <summary>Hints</summary>
+        <ol style="margin-top:0.5rem; padding-left:1.2rem; line-height:1.8">
+          <li>Open DevTools → <strong>Network</strong> tab. observe the status code that POST method return.</li>
+          <li>Check the <strong>Request Headers</strong> </li>
+          <li>Compare the JSON format </li>
+          <li>After fixing submit, load submissions and observe the displayed output</li>
+        </ol>
+      </details>
+    </div>
+  </div>
+
+  <script>
+    const form      = document.getElementById("contactForm");
+    const statusBox = document.getElementById("status");
+    const entries   = document.getElementById("entries");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name    = document.getElementById("name").value;
+      const email   = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      try {
+        const response = await fetch("/api/submit", {
+          method: "POST",
+          headers: {
+          },
+          body: JSON.stringify({ Fname, mail, message }), 
+        });
+
+        const result = await response.text();
+
+        if (result.success) {
+          statusBox.className = "success";
+          statusBox.textContent = `Submitted Successfully!`;
+        } else {
+          statusBox.className = "error";
+          statusBox.textContent = `Server error: ${result.error}`;
+        }
+      } catch (err) {
+        statusBox.className = "error";
+        statusBox.textContent = `Request failed: ${err.message}`;
+      }
+    });
+
+    async function loadSubmissions() {
+      try {
+        const response = await fetch("/api/submissions");
+        const result   = await response.json();
+
+        if (result.data.length === 0) {
+          entries.innerHTML = "<p style='color:#888;'>No submissions yet</p>";
+          return;
+        }
+        entries.innerHTML = result.data
+          .map(
+            (item) => `
+              <div class="entry">
+                <strong>${item.FName}</strong> — ${item.contact}<br/>   
+                <em>${item.message}</em><br/>
+              </div>`
+          )
+          .join("");
+      } catch (err) {
+        entries.innerHTML = `<p>Failed to load: ${err.message}</p>`;
+      }
+    }
+  </script>
+
+</body>
+</html>
