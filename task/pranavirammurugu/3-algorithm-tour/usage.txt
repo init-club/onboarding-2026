@@ -1,0 +1,7 @@
+Ensure you have installed on your system
+Open your command prompt
+Run the script using the following command:
+    python binary_search.py
+navigate to the directory:task/pranavirammurugu/3-algorithm-tour/
+the expected uotput is:
+    Element found at index: 2 
