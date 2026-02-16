@@ -126,8 +126,18 @@ button.primary {
   padding: 0.8rem 1rem;
   border-radius: 8px;
   font-size: 0.9rem;
-  display: none;
 }
+
+#status.success {
+  background: #2a7a2a;
+  color: #d0f0d0;
+}
+
+#status.error {
+  background: #7a2a2a;
+  color: #f0d0d0;
+}
+
 
 #submissions {
   margin-top: 1.5rem;
