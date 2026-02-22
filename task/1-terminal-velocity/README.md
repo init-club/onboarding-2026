@@ -1,41 +1,29 @@
-# Task — Terminal Velocity
+# Task — Terminal Velocity ✅ (Task 1 Completed)
 
-## Purpose
-**Goal:** Reduce friction between thought and execution by improving typing speed and terminal usage. This task builds speed, accuracy, and confidence with the keyboard and command line.
+## Status
+Task 1 successfully completed.
 
+## Easy Level ✅ Completed
+- Completed touch-typing course
+- Achieved 45 WPM
+- Achieved 97% accuracy
+- Screenshot attached as proof
 
-## Sub-problems
-- Developing touch-typing discipline  
-- Learning essential terminal commands  
-
-
-## Easy Level
-- Complete a touch-typing course  
-- Achieve **>40 WPM** with **>95% accuracy**  
-- Capture a typing test screenshot  
-
-
-## Advanced Level
-- Master command-line navigation and piping  
-- Use terminal commands regularly in your workflow  
-- Apply commands to small practical tasks  
+## Performance Summary
+- Best Speed: 45 WPM
+- Best Accuracy: 97%
+- Consistency: 61–68%
+- Test Types: 50 words & 100 words (English)
 
 
-## Pre-requisites
-- Keyboard access  
-- Terminal or command prompt access  
+## Advanced Level ✅ Completed
 
+- Practiced command-line navigation (pwd, cd, ls -la)
+- Used piping (|)
+- Used output redirection (>)
+- Performed basic file operations (mkdir, touch, echo, cat)
+- Applied commands in practical mini tasks
 
-## Learning Outcomes
-- Improved typing speed and accuracy  
-- Better productivity  
-- Comfort with command-line tools  
-
-
-## Expected Submission
-- Screenshot of typing speed profile (WPM and accuracy)  
-
-
-## Evaluation Criteria
-- Accuracy and speed achieved  
-- Familiarity with terminal commands
+## Learning Outcome
+- Improved typing speed, accuracy, keyboard confidence.
+- Familiarity with Linux environments 

@@ -1,139 +1,54 @@
-# Task — Linux Migration 
+Task — Linux Migration (Completed)
+==================================
 
-## Goal
+🛠 Setup Overview
+-----------------
 
-Developers work best when they understand and control their environment.  
-In this task, you will set up a Linux system and learn how to operate inside it confidently.
+*   **Distribution:** Linux Mint 22 (Cinnamon Edition)
+    
+*   **Installation Method:** Dual Boot (alongside Windows)
+    
+*   **Status:** System fully configured and verified.
+    
 
-You are expected to make your own installation decisions, follow official documentation, and understand what you configure — not just run commands blindly.
+🚀 Migration Journey
+--------------------
 
+### 1\. Installation Decisions
 
-# What This Task Builds
+I chose **Linux Mint** for its reliability and the "Cinnamon" desktop environment, which provides a familiar yet highly customizable workflow. Opting for **Dual Boot** ensures I have zero-latency access to my hardware, which is critical for my work with **IoT and Embedded Systems**.
 
-- Awareness of how operating systems support development  
-- Confidence working in Linux environments  
-- Comfort using the terminal for system tasks  
+### 2\. Configuration Steps
 
+After the initial installation, I performed the following environment setups:
 
-# Core Areas
+*   **System Update:** Refreshed the APT cache and upgraded all pre-installed packages.
+    
+*   **Development Tools:** Installed essential build tools including git, and python3.
+    
+*   **Environment Tweaks:** Configured the terminal and shell to better suit a full-stack development workflow.
+    
 
-You will practice:
+### 3\. Verification
 
-- Selecting an appropriate Linux setup method  
-- Configuring a usable development environment  
-- Verifying your installation using terminal tools  
+To confirm the kernel and system environment are running correctly, I utilized system information tools to verify the hardware recognition and OS layer.
 
+🏁 Verification Output
+----------------------
 
-# Difficulty Levels
+### System Info Screenshot
 
-## Easy Level
+![Linux Mint Verification](./Screenshot%20from%202026-02-21%2016-00-29.png) 
 
-Complete the basics:
+🧠 Reflection & Success Criteria
+--------------------------------
 
-- Install Linux using **Dual Boot or WSL**
-- Confirm the system works using simple terminal commands  
-  (navigation, package updates, system info tools, etc.)
+By completing this task, I have:
 
-
-## Advanced Level
-
-Go further:
-
-- Use Linux as your **main development environment**
-- Explore:
-  - File permissions  
-  - Running processes  
-  - Package management  
-  - User configuration  
-
-
-# Pre-requisites
-
-- A personal laptop or PC  
-- Basic familiarity with using a computer  
-- Willingness to read official documentation  
-
-
-# Safety First 
-
-Before making OS changes:
-
-- Back up important data  
-- Understand what disk partitioning means if attempting dual boot  
-- If unsure, start with WSL — it’s safer and reversible  
-
-No task here is worth losing your files.
-
-
-# Choosing a Setup Method
-
-Pick what suits your comfort level:
-
-### Dual Boot
-- Best performance  
-- Lets you switch between Windows and Linux  
-- Requires disk space management  
-
-### WSL (Windows Subsystem for Linux)
-- Runs Linux inside Windows  
-- Minimal risk  
-- Great for development work  
-
-
-# Suggested Workflow
-
-1. Choose a Linux distribution (Ubuntu and Fedora are beginner-friendly)
-2. Follow the **official installation guide** for your method
-3. After installation:
-   - Update packages  
-   - Install basic tools (git, editor, etc.)  
-   - Set up your user environment  
-4. Verify everything works using terminal commands
-
-
-# Verification Step
-
-Run a system-info tool such as:
-fastfetch
-
-
-This confirms your Linux environment is running correctly.
-
-
-# Expected Submission
-
-Inside your submission folder include:
-
-### 1️⃣ Screenshot
-A clear image showing `neofetch` running in your Linux terminal.
-
-### 2️⃣ GitHub Link
-Your repository or PR containing your submission.
-
-
-# Evaluation Criteria
-
-Reviewers will check:
-
-- Linux installed successfully  
-- Environment configured correctly  
-- Screenshot is valid and clear  
-- Submission link works  
-
-
-# What Success Looks Like
-
-By finishing this task, you should:
-
-- Comfortably open and use a Linux terminal  
-- Understand how your OS affects development  
-- Know how to install and manage software in Linux  
-
-
-# Final Reminder
-
-Don’t rush the install.  
-Read guides carefully.  
-Understand each step.
-
-The goal is learning, not just finishing.
+*   Successfully managed **disk partitions** without data loss.
+    
+*   Configured the **GRUB bootloader** to manage the dual-boot environment.
+    
+*   Gained hands-on experience with **APT package management** in a Debian-based system.
+    
+*   Established a high-performance Linux environment for **Electronics and Communication** development.
