@@ -1,0 +1,18 @@
+# Algorithm Tour Execution Instructions & Examples
+
+## Running the Code
+```bash
+python algorithms.py
+```
+
+## Sample Input & Output Example
+
+### Input Array:
+`[38, 27, 43, 3, 9, 82, 10]`
+
+### Output:
+```text
+Original array: [38, 27, 43, 3, 9, 82, 10]
+Sorted array: [3, 9, 10, 27, 38, 43, 82]
+Index of 9: 1
+```
