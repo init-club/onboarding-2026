@@ -1,0 +1,18 @@
+# Good First Issue References & Commands
+
+## Target Repository
+- GitHub Repo: https://github.com/Roots26Hz/Glint
+
+## Issue Verification Commands (macOS Xcode Build)
+
+### 1. Project Generation & Compilation
+```bash
+npx xcodegen generate
+xcodebuild -scheme Glint -configuration Release build
+```
+
+### 2. Resetting TCC Permissions for Verification
+```bash
+tccutil reset ScreenCapture com.rutav.Glint
+tccutil reset SystemAudioCapture com.rutav.Glint
+```

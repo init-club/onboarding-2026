@@ -1,0 +1,21 @@
+# Containerization Commands & Execution Steps
+
+## Build Image
+```bash
+docker build -t task5-web-app .
+```
+
+## Run Container
+```bash
+docker run -d -p 3000:3000 --name web-app-container task5-web-app
+```
+
+## Using Docker Compose
+```bash
+docker compose up -d
+```
+
+## Verify Status
+```bash
+docker ps
+```

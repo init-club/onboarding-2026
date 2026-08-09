@@ -1,0 +1,12 @@
+# Terminal Velocity Usage & Commands
+
+Commands and utilities used for terminal practice and testing.
+
+## Fastfetch Verification
+```bash
+fastfetch
+```
+
+## Typing Practice
+- Target WPM: Practice monkeytype/typing tests in terminal or browser.
+- Screenshot output saved in `wpm.png`.

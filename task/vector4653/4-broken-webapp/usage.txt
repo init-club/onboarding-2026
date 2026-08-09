@@ -1,0 +1,16 @@
+# Broken Web App Setup & Execution Instructions
+
+## Setup
+```bash
+npm install
+```
+
+## Running the Web Server
+```bash
+npm start
+```
+
+## Testing Pages
+- Main Dashboard: `http://localhost:3000`
+- Easy Debug Level: `http://localhost:3000/easy.html`
+- Advanced Debug Level: `http://localhost:3000/advanced.html`
