@@ -53,17 +53,19 @@
       const message = document.getElementById("message").value;
 
       try {
-        const response = await fetch("/api/submt", {
-          method: "GET",
+        // Was "/api/submt" (typo) with method GET; the route is app.post("/api/submit"),
+        // and fetch refuses a GET carrying a body, so nothing was ever sent.
+        const response = await fetch("/api/submit", {
+          method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name, email, message }),   
+          body: JSON.stringify({ name, email, message }),
         });
 
-        const result = await response.json();   
+        const result = await response.json();
 
         if (result.success) {
           statusBox.className = "success";
-          statusBox.textContent = "Submitted successfully!"; 
+          statusBox.textContent = "Submitted successfully!";
         } else {
           statusBox.className = "error";
           statusBox.textContent = `Server error: ${result.error}`;
