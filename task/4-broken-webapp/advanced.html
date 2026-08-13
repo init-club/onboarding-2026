@@ -7,11 +7,9 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <div class="container">
     <a href="index.html" class="back-link">← Back to Main Page</a>
     <center><h1> Contact Form</h1></center>
-
     <form id="contactForm">
       <div>
         <label for="name">Name</label>
@@ -27,9 +25,7 @@
       </div>
       <button type="submit" class="primary">Submit</button>
     </form>
-
     <div id="status"></div>
-
     <div id="submissions">
       <h3>Stored Submissions</h3>
       <p style="font-size:0.85rem; color:#888;">
@@ -40,7 +36,6 @@
       </button>
       <div id="entries"></div>
     </div>
-
     <div class="hint">
       <details>
         <summary>Hints</summary>
@@ -53,28 +48,24 @@
       </details>
     </div>
   </div>
-
   <script>
     const form = document.getElementById("contactForm");
     const statusBox = document.getElementById("status");
     const entries   = document.getElementById("entries");
-
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const name    = document.getElementById("name").value;
       const email   = document.getElementById("email").value;
       const message = document.getElementById("message").value;
-
       try {
         const response = await fetch("/api/submit", {
           method: "POST",
           headers: {
+            "Content-Type": "application/json",
           },
-          body: JSON.stringify({ Fname, mail, message }), 
+          body: JSON.stringify({ name, email, message }),
         });
-
-        const result = await response.text();
-
+        const result = await response.json();
         if (result.success) {
           statusBox.className = "success";
           statusBox.textContent = `Submitted Successfully!`;
@@ -87,12 +78,10 @@
         statusBox.textContent = `Request failed: ${err.message}`;
       }
     });
-
     async function loadSubmissions() {
       try {
         const response = await fetch("/api/submissions");
         const result   = await response.json();
-
         if (result.data.length === 0) {
           entries.innerHTML = "<p style='color:#888;'>No submissions yet</p>";
           return;
@@ -101,7 +90,7 @@
           .map(
             (item) => `
               <div class="entry">
-                <strong>${item.FName}</strong> — ${item.contact}<br/>   
+                <strong>${item.name}</strong> — ${item.email}<br/>
                 <em>${item.message}</em><br/>
               </div>`
           )
@@ -111,6 +100,5 @@
       }
     }
   </script>
-
 </body>
 </html>
