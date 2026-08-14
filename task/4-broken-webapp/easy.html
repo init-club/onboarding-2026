@@ -53,8 +53,8 @@
       const message = document.getElementById("message").value;
 
       try {
-        const response = await fetch("/api/submt", {
-          method: "GET",
+        const response = await fetch("/api/submit", {
+          method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ name, email, message }),   
         });
