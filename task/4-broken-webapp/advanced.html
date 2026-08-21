@@ -68,12 +68,16 @@
       try {
         const response = await fetch("/api/submit", {
           method: "POST",
-          headers: {
-          },
-          body: JSON.stringify({ Fname, mail, message }), 
+          // Header was empty; without it express.json() skips the body and the
+          // server answers 400.
+          headers: { "Content-Type": "application/json" },
+          // Was { Fname, mail, message } -- undeclared names, threw before sending.
+          body: JSON.stringify({ name, email, message }),
         });
 
-        const result = await response.text();
+        // Was response.text(), so result.success was undefined and even a 201
+        // reported "Server error: undefined".
+        const result = await response.json();
 
         if (result.success) {
           statusBox.className = "success";
@@ -99,9 +103,10 @@
         }
         entries.innerHTML = result.data
           .map(
+            // Was item.FName / item.contact; the server stores name / email.
             (item) => `
               <div class="entry">
-                <strong>${item.FName}</strong> — ${item.contact}<br/>   
+                <strong>${item.name}</strong> — ${item.email}<br/>
                 <em>${item.message}</em><br/>
               </div>`
           )
