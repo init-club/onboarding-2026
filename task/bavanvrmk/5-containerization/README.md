@@ -4,6 +4,10 @@
 
 A two-player Tic-Tac-Toe game built with Python Flask. The game has a neo-brutalist interface and runs in a lightweight Python container.
 
+## Source code
+
+The application source is maintained separately at [brutal-tripleT](https://github.com/bavanvrmk/brutal-tripleT).
+
 ## Build and run
 
 ```bash
