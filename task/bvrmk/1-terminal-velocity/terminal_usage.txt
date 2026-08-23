@@ -1,0 +1,352 @@
+: 1783743425:0;hi
+: 1783743429:0;whoami
+: 1783743442:0;sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+: 1783743447:0;ls ~/.oh-my-zsh
+: 1783743479:0;git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \\
+${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+: 1783743488:0;nano ~/.zshrc
+: 1783743564:0;git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions\
+\
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+: 1783743580:0;source ~/.zshrc
+: 1783743796:0;cd Downloads
+: 1783743811:0;p10k configure
+: 1783743842:0;fastfetch
+: 1783743952:0;sudo dnf install kitty
+: 1783851673:0;who|sort
+: 1783851685:0;who
+: 1783853236:0;busctl set-property org.freedesktop.NetworkManager /org/freedesktop/NetworkManager org.freedesktop.NetworkManager ConnectivityCheckEnabled b false\
+
+: 1783854335:0;notion-repackaged
+: 1783854338:0;rm notion-repackaged
+: 1783855197:0;who | wc -l
+: 1783861270:0;ls
+: 1783861272:0;cd
+: 1783861272:0;ls
+: 1783861280:0;ls Downloads
+: 1783861288:0;cd
+: 1783861289:0;ls
+: 1783861293:0;ls Documents
+: 1783861299:0;ls
+: 1783861305:0;cd Documents
+: 1783861311:0;ls
+: 1783861329:0;ls -l
+: 1783861805:0;ps
+: 1783863808:0;echo $OSTYPE
+: 1783866906:0;echo $history
+: 1783918085:0;python gui.py
+: 1783918094:0;pip install customtkinter
+: 1783918099:0;python gui.py
+: 1783918107:0;pip install tkinter
+: 1783918112:0;pip install tk
+: 1783918117:0;python gui.py
+: 1783918168:0;python -m tkinter\
+
+: 1783918189:0;sudo apt update\
+sudo apt install python3-tk\
+
+: 1783918204:0;sudo dnf update\
+sudo dnf install python3-tk\
+
+: 1783918319:0;python gui.py
+: 1783918333:0;python3 gui.py
+: 1783918372:0;sudo dnf install python3.14-tkinter\
+
+: 1783918387:0;python3 gui.py
+: 1783918395:0;pip install keystone
+: 1783918480:0;python3 gui.py
+: 1783918509:0;pip install Ks
+: 1783918515:0;python3 gui.py
+: 1783918537:0;# 1. Remove the incorrect package causing the clash\
+python3.14 -m pip uninstall keystone\
+\
+# 2. Install the correct assembler package\
+python3.14 -m pip install keystone-engine
+: 1783918583:0;python3 gui.py
+: 1783918592:0;pip install unicorn
+: 1783918612:0;python3 gui.py
+: 1783918618:0;pip install capstone
+: 1783918624:0;python3 gui.py
+: 1784034639:0;/usr/bin/python /home/bvrmk/Downloads/test123.py
+: 1784034765:0;python3 gui.py
+: 1784035017:0;# Install dependencies\
+pip install -r requirements.txt\
+\
+# Run both UIs together\
+python launcher.py\
+\
+# Or run separately:\
+python app.py          # Web UI only
+: 1784048198:0;/usr/bin/python "/home/bvrmk/Downloads/14 lab.py"
+: 1784118222:0;pactl list sinks | grep "Channel Map"
+: 1784118236:0;sudo dnf install pavucontrol
+: 1784118321:0;pavucontrol
+: 1784118349:0;pactl info
+: 1784118361:0;pactl list sinks
+: 1784118378:0;wpctl status
+: 1784131084:0;cs
+: 1784131085:0;cd
+: 1784131095:0;ls
+: 1784131102:0;cd MacTahoe-gtk-theme
+: 1784131104:0;ls
+: 1784131107:0;./install.sh -b -l            # install blur verison of libadwaita
+: 1784131142:0;./install.sh -b --help
+: 1784131174:0;./install.sh -b -l -opacity 25
+: 1784131182:0;./install.sh -b -l -o 25
+: 1784131190:0;./install.sh -b -l --opacity 25
+: 1784131212:0;./install.sh -o solid -p 75
+: 1784131227:0;./install.sh --help
+: 1784131292:0;./install.sh -o solid
+: 1784132596:0;jobs
+: 1784132603:0;cd
+: 1784132605:0;jobs
+: 1784132735:0;df
+: 1784132739:0;df -user
+: 1784132749:0;df -tmpfs
+: 1784132756:0;df tmpfs
+: 1784132763:0;df ~
+: 1784176435:0;cd
+: 1784176439:0;cd Ma
+: 1784176442:0;cd MacTahoe-gtk-theme
+: 1784176445:0;ls
+: 1784176452:0;./install.sh -b -l
+: 1784176736:0;find ~/.themes /usr/share/themes -type d -name "MacTahoe*" 2>/dev/null
+: 1784176757:0;find ~/.themes /usr/share/themes -type d -name "Glassy*" 2>/dev/null
+: 1784176811:0;/home/bvrmk/.themes/MacTahoe-Dark
+: 1784176822:0;gsettings set org.gnome.desktop.interface gtk-theme "MacTahoe-Dark-solid"
+: 1784176837:0;grep -R "#2f\|#30\|#33\|#34\|#35\|view_bg_color\|window_bg_color\|base_color" ~/.themes/MacTahoe-Dark/gtk-4.0
+: 1784176877:0;gsettings set org.gnome.desktop.interface gtk-theme "MacTahoe-Dark-solid-hdpi"
+: 1784176895:0;cd ~/.themes/MacTahoe-Dark\
+\
+cp gtk-4.0/gtk.css gtk-4.0/gtk.css.bak\
+cp gtk-4.0/gtk-dark.css gtk-4.0/gtk-dark.css.bak\
+\
+sed -i 's/#333333/#000000/g' gtk-4.0/gtk.css\
+sed -i 's/#242424/#000000/g' gtk-4.0/gtk.css\
+\
+sed -i 's/#333333/#000000/g' gtk-4.0/gtk-dark.css\
+sed -i 's/#242424/#000000/g' gtk-4.0/gtk-dark.css
+: 1784176900:0;gsettings reset org.gnome.desktop.interface color-scheme
+: 1784176958:0;./install.sh -b -l
+: 1784176968:0;cd
+: 1784176971:0;cd MacTahoe-gtk-theme
+: 1784176973:0;./install.sh -b -l
+: 1784176978:0;cd MacTahoe-gtk-theme
+: 1784176985:0;gsettings reset org.gnome.desktop.interface color-scheme
+: 1784197930:0;ls
+: 1784197932:0;cd
+: 1784197933:0;ls
+: 1784197962:0;p10k configure
+: 1784198115:0;if (( 'a'=='b' ))\
+then\
+echo hivi\
+else\
+ech nooo\
+fi
+: 1784198123:0;cd
+: 1784198172:0;ls
+: 1784198178:0;cd
+: 1784198181:0;ls
+: 1784198202:0;cd Documents
+: 1784198203:0;ls
+: 1784198214:0;chmod +x lb3.sh
+: 1784198220:0;./lb3.sh
+: 1784198283:0;./lb3.sh\\
+
+: 1784198287:0;./lb3.sh\
+
+: 1784198833:0;which bash
+: 1784198844:0;which zsh
+: 1784207018:0;passwd
+: 1784207050:0;passwd --help
+: 1784207078:0;passwd -a
+: 1784207092:0;passwd --all
+: 1784285436:0;ssh
+: 1784285440:0;ssh -c
+: 1784285754:0;GOA_MS365_CLIENT_ID="20460e5d-ce91-49af-a3a5-70b6be7486d1" gnome-control-center online-accounts\
+
+: 1784285821:0;which gnome-control-center\
+
+: 1784285838:0;GOA_MS365_CLIENT_ID="20460e5d-ce91-49af-a3a5-70b6be7486d1" gnome-control-center online-accounts -v\
+
+: 1784285847:0;GOA_MS365_CLIENT_ID="20460e5d-ce91-49af-a3a5-70b6be7486d1" gnome-control-center -v\
+
+: 1784285875:0;GOA_MS365_CLIENT_ID="20460e5d-ce91-49af-a3a5-70b6be7486d1" goa-daemon --replace &\
+
+: 1784285891:0;GOA_MS365_CLIENT_ID="20460e5d-ce91-49af-a3a5-70b6be7486d1" /usr/lib/goa-daemon --replace &\
+
+: 1784285913:0;GOA_MS365_CLIENT_ID="20460e5d-ce91-49af-a3a5-70b6be7486d1" /usr/lib/gnome-online-accounts/goa-daemon --replace &\
+
+: 1784285927:0;gdbus call --session --dest org.gnome.OnlineAccounts --object-path /org/gnome/OnlineAccounts/AccountManager --method org.gnome.OnlineAccounts.AccountManager.AddAccount "exchange" "your_work_email@company.com" "" {}\
+
+: 1784285933:0;echo 'export GOA_MS365_CLIENT_ID="20460e5d-ce91-49af-a3a5-70b6be7486d1"' >> ~/.zshrc\
+
+: 1784285936:0;source ~/.zshrc\
+
+: 1784285940:0;killall -9 goa-daemon gnome-control-center 2>/dev/null\
+
+: 1784285944:0;gdbus call --session --dest org.gnome.OnlineAccounts --object-path /org/gnome/OnlineAccounts/AccountManager --method org.gnome.OnlineAccounts.AccountManager.AddAccount "exchange" "your_work_email@company.com" "" {}\
+
+: 1784285959:0;systemctl --user set-environment GOA_MS365_CLIENT_ID="20460e5d-ce91-49af-a3a5-70b6be7486d1"\
+
+: 1784285964:0;systemctl --user restart gnome-online-accounts.service 2>/dev/null || killall -9 goa-daemon\
+
+: 1784285967:0;gnome-control-center\
+
+: 1784286078:0;sudo pacman -S thunderbird\
+
+: 1784286094:0;sudo pacman -S evolution evolution-ews\
+
+: 1784286109:0;yay -S maisudo pacman -S onedrive\
+
+: 1784286124:0;sudo pacman -S onedrive\
+
+: 1784286142:0;sudo pacman -Sy onedrive\
+
+: 1784286269:0;sudo dnf install onedrive
+: 1784286283:0;onedrive
+: 1784338644:0;install gpaste gpaste-ui
+: 1784338653:0;sudo dnf install gpaste gpaste-ui
+: 1784338677:0;gpaste
+: 1784338680:0;paste
+: 1784338890:0;systemctl --user enable --now gpaste\
+
+: 1784338903:0;sudo dnf install gnome-shell-extension-gpaste
+: 1784521902:0;btop
+: 1784521937:0;stat
+: 1784521942:0;stat --help
+: 1784521949:0;btop
+: 1784521969:0;fastfetch
+: 1784521972:0;btop
+: 1784521998:0;nano ~/.zshrc
+: 1784732214:0;cd Downloads
+: 1784732240:0;chmod 777 abc.sh
+: 1784732246:0;./abc.sh
+: 1784733006:0;shutdown no
+: 1784733017:0;btop
+: 1784733192:0;ssh
+: 1784733195:0;ping
+: 1784733233:0;ping 10.12.186.153
+: 1784733445:0;ping 127.0.0.1
+: 1784733469:0;ping 10.12.186.153
+: 1784733496:0;ping 1.1.1.1
+: 1784733537:0;cd
+: 1784733545:0;bash
+: 1784778560:0;history
+: 1784778570:0;history --help
+: 1784778576:0;history -h
+: 1784778581:0;history 100
+: 1784806262:0;bluetoothctl
+: 1784812421:0;/usr/bin/python "/home/bvrmk/Downloads/Sem3/DS lab/lli.py"
+: 1784812737:0;/usr/bin/python "/home/bvrmk/Downloads/Sem3/DS lab/lli.py" 
+: 1784812884:0;/usr/bin/python "/home/bvrmk/Downloads/Sem3/DS lab/lli.py"
+: 1784821850:0;/usr/bin/python "/home/bvrmk/Downloads/Sem3/D/usr/bin/python "/home/bvrmk/Downloads/Sem3/DS lab/lli.py"/usr/bin/python "/home/bvrmk/Downloads/Sem3/DS lab/lli.py"
+: 1784821850:0;/usr/bin/python "/home/bvrmk/Downloads/Sem3/DS la/usr/bin/python "/home/bvrmk/Downloads/Sem3/DS lab/lli.py"\
+/usr/bin/python "/home/bvrmk/Downloads/Sem3/DS lab/lli.py"
+: 1784821850:0;/usr/bin/python "/home/bvrmk/Downloads/Sem3/DS lab/lli.py"
+: 1784867326:0;ping class Node:\
+    def __init__(self,val:int,next=None):\
+        self.val=val\
+        self.next=next\
+class LinkedList:\
+    def __init__(self):\
+        self.head=None\
+    def __str__(self) -> str:\
+        if not self.head:\
+            return "No node found."\
+        current=self.head\
+        strii=""\
+        while current:\
+            if current.next:\
+                strii+=f"{current.val} -> "\
+            else:\
+                strii+=f"{current.val}"\
+            current=current.next\
+        return strii\
+    def append(self,val):\
+        if not self.head:\
+            self.head=Node(val)\
+            return\
+        current=self.head\
+        while current.next:\
+            current=current.next\
+        current.next=Node(val)\
+    def trav(self):\
+        if not self.head:\
+            print("No node found.")\
+            return\
+        current=self.head\
+        while current:\
+            if current.next:\
+                print(current.val,end="->")\
+            else:\
+                print(current.val)\
+            current=current.next\
+        print()\
+    def revr(self):\
+        arr=[]\
+        if not self.head:\
+            print("No node found.")\
+            return\
+        current=self.head\
+        while current:\
+            arr.append(current.val)\
+            current=current.next\
+        current=self.head\
+        while current:\
+            current.val=arr.pop()\
+            current=current.next\
+    def ins_str(self,val):\
+        if not self.head:\
+            return \
+        b=Node(val,self.head)\
+        self.head=b\
+    def ins_end(self,val):\
+        if not self.head:\
+            self.head = Node(val)\
+            return\
+        current=self.head\
+        while current.next:\
+            current=current.next\
+        current.next=Node(val)\
+    def ins_mid(self,va,idx):\
+        if not self.head and idx==0:\
+            self.head = Node(va)\
+            return\
+        if not self.head:\
+            print("Wrong bruh")\
+            return\
+        current=self.head\
+        ind=0\
+        while current:\
+            if ind==(idx-1):\
+                current.next=Node(va,current.next)\
+            ind+=1\
+            current=current.next\
+        \
+\
+ll=LinkedList()\
+t_no=int(input("Enter total no. of elements: "))\
+for i in range(t_no):\
+    a=int(input("Enter a number:"))\
+    ll.append(a)\
+print(ll)\
+ll.revr()\
+print(ll)\
+ll.ins_str(5)\
+print(ll)\
+ll.ins_end(6)\
+print(ll)\
+ll.ins_mid(5,2)\
+print(ll)
+: 1784867362:0;ping ftp://ftp.amritanet.edu/
+: 1784867387:0;ping smb://Sivaramans-MacBook-Air.local:445/
+: 1784947766:0;nmcli connection show\
+
+: 1784947777:0;nmcli connection modify "Wired connection 1" ipv4.addresses 192.168.1.1/24 ipv4.method manual\
+
+: 1784947785:0;nmcli connection up "Wired connection 1"\
+
+: 1784985961:0;sudo dnf install gparted
+: 1786809219:0;fastfetch
+: 1786812210:0;history 100
