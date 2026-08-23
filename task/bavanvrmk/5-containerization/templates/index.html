@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brutal Tic-Tac-Toe</title>
+  <style>
+    :root {
+      --ink: #111111;
+      --paper: #fff8e8;
+      --yellow: #ffe45e;
+      --pink: #ff6da8;
+      --blue: #73c7ff;
+      --mint: #a2ffbc;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      align-items: center;
+      background: var(--yellow);
+      color: var(--ink);
+      display: flex;
+      font-family: Arial, Helvetica, sans-serif;
+      justify-content: center;
+      margin: 0;
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .game {
+      background: var(--paper);
+      border: 4px solid var(--ink);
+      box-shadow: 10px 10px 0 var(--ink);
+      max-width: 510px;
+      padding: 28px;
+      width: 100%;
+    }
+
+    .tag {
+      background: var(--pink);
+      border: 3px solid var(--ink);
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      padding: 6px 9px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 8vw, 3.6rem);
+      line-height: 0.9;
+      margin: 18px 0 12px;
+      text-transform: uppercase;
+    }
+
+    .status {
+      background: var(--mint);
+      border: 3px solid var(--ink);
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin: 20px 0;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .board {
+      display: grid;
+      gap: 8px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cell {
+      aspect-ratio: 1;
+      background: var(--blue);
+      border: 4px solid var(--ink);
+      color: var(--ink);
+      cursor: pointer;
+      font-size: clamp(2.7rem, 15vw, 5rem);
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .cell:hover:not(:disabled) { background: var(--pink); }
+    .cell:disabled { cursor: default; }
+
+    .reset {
+      background: var(--pink);
+      border: 3px solid var(--ink);
+      box-shadow: 5px 5px 0 var(--ink);
+      color: var(--ink);
+      cursor: pointer;
+      display: block;
+      font-size: 1rem;
+      font-weight: 900;
+      margin: 26px auto 0;
+      padding: 13px 20px;
+      text-transform: uppercase;
+    }
+
+    .reset:active {
+      box-shadow: 1px 1px 0 var(--ink);
+      transform: translate(4px, 4px);
+    }
+
+    .note {
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin: 22px 0 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main class="game">
+    <span class="tag">Flask edition</span>
+    <h1>Tic<br>Tac<br>Toe!</h1>
+    <p class="status" id="status" aria-live="polite">Player X, make a move.</p>
+    <section class="board" aria-label="Tic-Tac-Toe board">
+      <button class="cell" aria-label="Top left" data-index="0"></button>
+      <button class="cell" aria-label="Top center" data-index="1"></button>
+      <button class="cell" aria-label="Top right" data-index="2"></button>
+      <button class="cell" aria-label="Middle left" data-index="3"></button>
+      <button class="cell" aria-label="Center" data-index="4"></button>
+      <button class="cell" aria-label="Middle right" data-index="5"></button>
+      <button class="cell" aria-label="Bottom left" data-index="6"></button>
+      <button class="cell" aria-label="Bottom center" data-index="7"></button>
+      <button class="cell" aria-label="Bottom right" data-index="8"></button>
+    </section>
+    <button class="reset" id="reset">New game</button>
+    <p class="note">Two players. Zero mercy. Have fun.</p>
+  </main>
+
+  <script>
+    const cells = [...document.querySelectorAll(".cell")];
+    const status = document.getElementById("status");
+    const reset = document.getElementById("reset");
+    const winningLines = [
+      [0, 1, 2], [3, 4, 5], [6, 7, 8],
+      [0, 3, 6], [1, 4, 7], [2, 5, 8],
+      [0, 4, 8], [2, 4, 6],
+    ];
+    let board;
+    let player;
+    let finished;
+
+    function winner() {
+      return winningLines.find(([a, b, c]) =>
+        board[a] && board[a] === board[b] && board[a] === board[c]
+      );
+    }
+
+    function play(event) {
+      const index = Number(event.currentTarget.dataset.index);
+      if (finished || board[index]) return;
+
+      board[index] = player;
+      event.currentTarget.textContent = player;
+      const line = winner();
+
+      if (line) {
+        finished = true;
+        line.forEach((cellIndex) => cells[cellIndex].style.background = "#a2ffbc");
+        status.textContent = `Player ${player} wins!`;
+        return;
+      }
+
+      if (board.every(Boolean)) {
+        finished = true;
+        status.textContent = "Draw. Brutal, but fair.";
+        return;
+      }
+
+      player = player === "X" ? "O" : "X";
+      status.textContent = `Player ${player}, make a move.`;
+    }
+
+    function newGame() {
+      board = Array(9).fill("");
+      player = "X";
+      finished = false;
+      status.textContent = "Player X, make a move.";
+      cells.forEach((cell) => {
+        cell.textContent = "";
+        cell.style.background = "";
+      });
+    }
+
+    cells.forEach((cell) => cell.addEventListener("click", play));
+    reset.addEventListener("click", newGame);
+    newGame();
+  </script>
+</body>
+</html>
