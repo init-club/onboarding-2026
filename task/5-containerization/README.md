@@ -61,3 +61,25 @@ This task introduces the basics of Docker and container-based workflows. You wil
 - Use official base images when possible  
 - Rebuild after changes to verify reproducibility  
 - Avoid hardcoding secrets into images
+
+## My Submission
+
+### What I containerized
+I containerized the Broken Web App using Docker. It is a Node.js/Express web application that runs on port 3000.
+
+### How I built and ran it
+I created a Dockerfile using the Node.js 22 Alpine image, installed the dependencies, copied the application files, exposed port 3000, and started the application with npm start.
+
+Commands used:
+
+docker build -t init-club-webapp .
+docker run -d -p 3000:3000 --name init-club-webapp init-club-webapp
+docker ps
+
+### Verification
+The container was successfully built and started. docker ps showed init-club-webapp running with port 3000 mapped to the host.
+
+![Docker ps screenshot](docker-ps-screenshot.png)
+
+### Issues faced
+Docker was initially not installed in my WSL Ubuntu environment. I installed Docker using docker.io, started the Docker service, and successfully built and ran the application.
