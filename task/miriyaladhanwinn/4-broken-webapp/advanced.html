@@ -94,21 +94,42 @@
         const response = await fetch("/api/submissions");
         const result   = await response.json();
 
-        if (result.data.length === 0) {
-          entries.innerHTML = "<p style='color:#888;'>No submissions yet</p>";
+        entries.innerHTML = "";
+
+        if (!result.data || result.data.length === 0) {
+          const emptyMsg = document.createElement("p");
+          emptyMsg.style.color = "#888";
+          emptyMsg.textContent = "No submissions yet";
+          entries.appendChild(emptyMsg);
           return;
         }
-        entries.innerHTML = result.data
-          .map(
-            (item) => `
-              <div class="entry">
-                <strong>${item.name}</strong> — ${item.email}<br/>   
-                <em>${item.message}</em><br/>
-              </div>`
-          )
-          .join("");
+
+        result.data.forEach((item) => {
+          const div = document.createElement("div");
+          div.className = "entry";
+
+          const strong = document.createElement("strong");
+          strong.textContent = item.name;
+
+          const contact = document.createTextNode(` — ${item.email}`);
+          const br = document.createElement("br");
+
+          const em = document.createElement("em");
+          em.textContent = item.message || "";
+
+          div.appendChild(strong);
+          div.appendChild(contact);
+          div.appendChild(br);
+          div.appendChild(em);
+
+          entries.appendChild(div);
+        });
       } catch (err) {
-        entries.innerHTML = `<p>Failed to load: ${err.message}</p>`;
+        entries.innerHTML = "";
+        const errMsg = document.createElement("p");
+        errMsg.className = "error";
+        errMsg.textContent = `Failed to load: ${err.message}`;
+        entries.appendChild(errMsg);
       }
     }
   </script>

@@ -27,7 +27,7 @@ Containers orchestrated via `docker-compose` with verified health checks and liv
 | Name | Image | Port Mapping | Status |
 | :--- | :--- | :--- | :--- |
 | `container-web-app` | `5-containerization-web` | `0.0.0.0:8080->8080/tcp` | Up (healthy) |
-| `container-redis-service` | `redis:7-alpine` | `0.0.0.0:6379->6379/tcp` | Up (healthy) |
+| `container-redis-service` | `redis:7-alpine` | `127.0.0.1:6379->6379/tcp` | Up (healthy) |
 
 ---
 
@@ -35,8 +35,8 @@ Containers orchestrated via `docker-compose` with verified health checks and liv
 
 ### Easy Level: Single Container (Standalone Web Service)
 ```bash
-# Navigate to the task directory
-cd task/5-containerization
+# Navigate to the contributor task directory
+cd task/miriyaladhanwinn/5-containerization
 
 # Build the Docker image
 docker build -t init-club-web-app:latest .

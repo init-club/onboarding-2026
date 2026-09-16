@@ -64,7 +64,10 @@ sudo apt install -y neofetch curl wget git htop tmux tree
 
 # Runtime environments
 sudo apt install -y python3 python3-pip python3-venv
-sudo apt install -y nodejs npm
+
+# Install Node.js v20 LTS via official NodeSource repository
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt install -y nodejs
 ```
 
 ### Step 4: Verification of Installed Toolchain
@@ -72,7 +75,8 @@ sudo apt install -y nodejs npm
 git --version       # git 2.43.0
 g++ --version       # g++ (Ubuntu 13.2.0)
 python3 --version   # Python 3.12.3
-node -v             # v20.18.0
+node -v             # v20.18.0 (NodeSource LTS)
+npm -v              # 10.8.2
 ```
 
 ---

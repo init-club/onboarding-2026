@@ -84,6 +84,14 @@ int main() {
     sort(reversed);
     assert(std::is_sorted(reversed.begin(), reversed.end()));
 
+    std::vector<int> duplicates = {4, 2, 4, 1, 2, 3, 1};
+    sort(duplicates);
+    assert(std::is_sorted(duplicates.begin(), duplicates.end()));
+
+    std::vector<int> negatives = {-3, 10, -5, 0, 7};
+    sort(negatives);
+    assert(std::is_sorted(negatives.begin(), negatives.end()));
+
     std::cout << "\nAll C++ Merge Sort assertions passed successfully!\n";
     return 0;
 }

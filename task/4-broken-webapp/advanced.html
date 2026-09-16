@@ -69,12 +69,11 @@
         const response = await fetch("/api/submit", {
           method: "POST",
           headers: {
-            "Content-Type": "application/json"
           },
-          body: JSON.stringify({ name, email, message }), 
+          body: JSON.stringify({ Fname, mail, message }), 
         });
 
-        const result = await response.json();
+        const result = await response.text();
 
         if (result.success) {
           statusBox.className = "success";
@@ -102,7 +101,7 @@
           .map(
             (item) => `
               <div class="entry">
-                <strong>${item.name}</strong> — ${item.email}<br/>   
+                <strong>${item.FName}</strong> — ${item.contact}<br/>   
                 <em>${item.message}</em><br/>
               </div>`
           )

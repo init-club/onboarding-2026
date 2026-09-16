@@ -97,13 +97,26 @@ textarea {
   color: #e0e0e0;
   font-size: 0.95rem;
   margin-top: 0.25rem;
-  outline: none;
   transition: border-color 0.2s;
+}
+
+input:focus,
+input:focus-visible,
+textarea:focus,
+textarea:focus-visible {
+  border-color: #58a6ff;
+  outline: 2px solid #58a6ff;
+  outline-offset: 1px;
 }
 
 textarea {
   resize: vertical;
   min-height: 80px;
+}
+
+button:focus-visible {
+  outline: 2px solid #58a6ff;
+  outline-offset: 2px;
 }
 
 button {

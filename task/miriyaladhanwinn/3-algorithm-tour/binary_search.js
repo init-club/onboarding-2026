@@ -5,13 +5,15 @@
  *   - Space: O(1) iterative
  */
 
+const assert = require('node:assert/strict');
+
 function binarySearch(arr, target) {
   let low = 0;
   let high = arr.length - 1;
 
   while (low <= high) {
-    // Bitwise zero-fill right shift for fast, overflow-safe integer midpoint
-    const mid = (low + high) >>> 1;
+    // Arithmetic midpoint calculation avoiding 32-bit bitwise shift truncation
+    const mid = low + Math.floor((high - low) / 2);
 
     if (arr[mid] === target) {
       return mid;
@@ -35,10 +37,17 @@ targets.forEach((t) => {
   console.log(`Searching for ${t.toString().padStart(3)} -> Index: ${idx.toString().padStart(2)}`);
 });
 
-// Assertions
-console.assert(binarySearch([], 5) === -1, 'Failed on empty array');
-console.assert(binarySearch([10], 10) === 0, 'Failed on single-element match');
-console.assert(binarySearch([10], 20) === -1, 'Failed on single-element missing');
+// Comprehensive Strict Assertions (Fails process with non-zero exit code if invalid)
+assert.strictEqual(binarySearch([], 5), -1, 'Empty array must return -1');
+assert.strictEqual(binarySearch([10], 10), 0, 'Single-element match at index 0');
+assert.strictEqual(binarySearch([10], 20), -1, 'Single-element missing must return -1');
+assert.strictEqual(binarySearch([2, 4, 6, 8], 2), 0, 'First element match');
+assert.strictEqual(binarySearch([2, 4, 6, 8], 8), 3, 'Last element match');
+assert.strictEqual(binarySearch([2, 4, 6, 8], 1), -1, 'Element below minimum must return -1');
+assert.strictEqual(binarySearch([2, 4, 6, 8], 9), -1, 'Element above maximum must return -1');
+assert.strictEqual(binarySearch([2, 4, 6, 8], 5), -1, 'Element between existing values must return -1');
+assert.strictEqual(binarySearch([1, 3, 5, 7, 9], 5), 2, 'Odd-length list center match');
+
 console.log('\nAll JavaScript Binary Search assertions passed successfully!');
 
 module.exports = { binarySearch };

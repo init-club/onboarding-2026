@@ -13,8 +13,8 @@ pwd
 # List all files including hidden ones with permissions and sizes
 ls -la
 
-# Change directory into project folder
-cd ~/task/1-terminal-velocity
+# Change directory into project submission folder
+cd task/miriyaladhanwinn/1-terminal-velocity
 
 # Move up one level
 cd ..

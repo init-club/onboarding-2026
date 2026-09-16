@@ -44,9 +44,11 @@ if __name__ == "__main__":
     sorted_arr = merge_sort(sample)
     print(f"Sorted Array:   {sorted_arr}")
 
-    # Edge cases
+    # Comprehensive Edge Cases
     assert merge_sort([]) == []
     assert merge_sort([42]) == [42]
-    assert merge_sort([5, 4, 3, 2, 1]) == [1, 2, 3, 4, 5]
     assert merge_sort([1, 2, 3, 4, 5]) == [1, 2, 3, 4, 5]
+    assert merge_sort([5, 4, 3, 2, 1]) == [1, 2, 3, 4, 5]
+    assert merge_sort([4, 2, 4, 1, 2, 3, 1]) == [1, 1, 2, 2, 3, 4, 4]
+    assert merge_sort([-3, 10, -5, 0, 7]) == [-5, -3, 0, 7, 10]
     print("\nAll Python Merge Sort test assertions passed successfully!")

@@ -12,9 +12,12 @@ ENV NODE_ENV=production \
 # Copy package manifests for efficient layer caching
 COPY package*.json ./
 
-# Install only production dependencies
-RUN npm ci --omit=dev --ignore-scripts && \
-    npm cache clean --force
+# Install only production dependencies (uses npm ci with committed lockfile)
+RUN if [ -f package-lock.json ]; then \
+      npm ci --omit=dev --ignore-scripts; \
+    else \
+      npm install --omit=dev --ignore-scripts; \
+    fi && npm cache clean --force
 
 # Copy application source code
 COPY server.js ./

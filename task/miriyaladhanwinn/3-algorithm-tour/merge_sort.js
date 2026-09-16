@@ -5,6 +5,8 @@
  *   - Space: O(n) auxiliary
  */
 
+const assert = require('node:assert/strict');
+
 function mergeSort(arr) {
   if (arr.length <= 1) {
     return arr.slice();
@@ -50,12 +52,14 @@ console.log(`Original Array: [${sample.join(', ')}]`);
 const sorted = mergeSort(sample);
 console.log(`Sorted Array:   [${sorted.join(', ')}]`);
 
-// Assertions
-const checkSorted = (arr) => arr.every((v, i, a) => !i || a[i - 1] <= v);
-console.assert(checkSorted(sorted), 'Array is not sorted');
-console.assert(JSON.stringify(mergeSort([])) === JSON.stringify([]), 'Failed empty array');
-console.assert(JSON.stringify(mergeSort([42])) === JSON.stringify([42]), 'Failed single element');
-console.assert(JSON.stringify(mergeSort([5, 4, 3, 2, 1])) === JSON.stringify([1, 2, 3, 4, 5]), 'Failed reverse sorted');
+// Comprehensive Strict Assertions (Fails process with non-zero exit code if invalid)
+assert.deepStrictEqual(mergeSort([]), [], 'Empty array test failed');
+assert.deepStrictEqual(mergeSort([42]), [42], 'Single element test failed');
+assert.deepStrictEqual(mergeSort([1, 2, 3, 4, 5]), [1, 2, 3, 4, 5], 'Already sorted array failed');
+assert.deepStrictEqual(mergeSort([5, 4, 3, 2, 1]), [1, 2, 3, 4, 5], 'Reversed array failed');
+assert.deepStrictEqual(mergeSort([4, 2, 4, 1, 2, 3, 1]), [1, 1, 2, 2, 3, 4, 4], 'Array with duplicates failed');
+assert.deepStrictEqual(mergeSort([-3, 10, -5, 0, 7]), [-5, -3, 0, 7, 10], 'Array with negative numbers failed');
+
 console.log('\nAll JavaScript Merge Sort assertions passed successfully!');
 
 module.exports = { mergeSort };

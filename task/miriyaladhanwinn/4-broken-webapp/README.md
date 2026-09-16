@@ -49,7 +49,15 @@ This task involved diagnosing and fixing communication faults between client-sid
 4. **Bug 4: Schema Property Mismatch in `loadSubmissions()`**
    - **Symptom:** Submissions loaded from `/api/submissions` rendered as `undefined — undefined`.
    - **DevTools Discovery:** Inspected JSON response from `GET /api/submissions`: entries had keys `name`, `email`, `message`, while the UI template attempted to read `item.FName` and `item.contact`.
-   - **Fix:** Updated template string to `item.name` and `item.email`.
+   - **Fix:** Updated property access to `item.name` and `item.email`.
+
+5. **Bug 5: Cross-Site Scripting (XSS) via Unescaped innerHTML**
+   - **Symptom:** User submissions containing HTML or script markup could execute arbitrary code when rendered by `loadSubmissions()`.
+   - **Fix:** Switched from `innerHTML` template string concatenation to safe DOM element construction utilizing `textContent` (`document.createElement('div')`, setting `strong.textContent = item.name`, etc.).
+
+6. **Bug 6: Keyboard Focus Accessibility**
+   - **Symptom:** Stylesheet removed standard browser outlines (`outline: none`) without providing `:focus` or `:focus-visible` replacements, stranding keyboard navigation users.
+   - **Fix:** Added high-contrast `:focus-visible` focus rings (`outline: 2px solid #58a6ff; outline-offset: 1px;`).
 
 ---
 
@@ -57,7 +65,7 @@ This task involved diagnosing and fixing communication faults between client-sid
 
 ### Step 1: Install Dependencies & Start Server
 ```bash
-cd task/4-broken-webapp
+cd task/miriyaladhanwinn/4-broken-webapp
 npm install
 npm start
 ```

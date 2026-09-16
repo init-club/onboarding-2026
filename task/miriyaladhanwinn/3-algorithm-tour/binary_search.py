@@ -38,8 +38,14 @@ if __name__ == "__main__":
         idx = binary_search(test_arr, t)
         print(f"Searching for {t:3d} -> Index: {idx:2d}")
 
-    # Edge cases
+    # Comprehensive Edge Cases
     assert binary_search([], 5) == -1
     assert binary_search([10], 10) == 0
     assert binary_search([10], 20) == -1
+    assert binary_search([2, 4, 6, 8], 2) == 0
+    assert binary_search([2, 4, 6, 8], 8) == 3
+    assert binary_search([2, 4, 6, 8], 1) == -1
+    assert binary_search([2, 4, 6, 8], 9) == -1
+    assert binary_search([2, 4, 6, 8], 5) == -1
+    assert binary_search([1, 3, 5, 7, 9], 5) == 2
     print("\nAll Python Binary Search test assertions passed successfully!")

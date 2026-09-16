@@ -45,10 +45,16 @@ int main() {
         std::cout << "Searching for " << std::setw(3) << t << " -> Index: " << std::setw(2) << idx << "\n";
     }
 
-    // Edge case assertions
+    // Comprehensive edge case assertions
     assert(binarySearch({}, 5) == -1);
     assert(binarySearch({10}, 10) == 0);
     assert(binarySearch({10}, 20) == -1);
+    assert(binarySearch({2, 4, 6, 8}, 2) == 0);
+    assert(binarySearch({2, 4, 6, 8}, 8) == 3);
+    assert(binarySearch({2, 4, 6, 8}, 1) == -1);
+    assert(binarySearch({2, 4, 6, 8}, 9) == -1);
+    assert(binarySearch({2, 4, 6, 8}, 5) == -1);
+    assert(binarySearch({1, 3, 5, 7, 9}, 5) == 2);
 
     std::cout << "\nAll C++ Binary Search assertions passed successfully!\n";
     return 0;

@@ -16,7 +16,9 @@ This task explores how identical algorithmic paradigms—**Binary Search** ($O(\
 
 ## 2. Test Execution & Verification
 
-All implementations include self-contained assertion drivers verifying base cases, single elements, odd/even lists, reversed arrays, and empty lists.
+All implementations include self-contained assertion drivers with strict assertions (`assert` in Python/C++, `node:assert/strict` in JavaScript) that fail fast on any discrepancy:
+- **Binary Search drivers verify:** Empty lists (`[]`), single-element matches, missing elements, first and last element boundaries, odd/even length arrays, and elements outside bounds.
+- **Merge Sort drivers verify:** Empty lists (`[]`), single elements, sorted arrays, reversed arrays, arrays with duplicates, and arrays with negative values.
 
 ![Algorithm Output Verification](algo_output.png)
 
@@ -31,7 +33,7 @@ Refer to [`usage.txt`](usage.txt) for copy-pasteable execution and compilation i
 | Dimension | Python | JavaScript | C++ |
 | :--- | :--- | :--- | :--- |
 | **Brevity & Readability** | Highest. Pythonic list slicing (`arr[:mid]`) and dynamic typing make code succinct. | Moderate. Array methods (`slice()`, `push()`) provide clean functional constructs. | Verbose. Explicit iterator ranges, indices, vector allocations, and loop counters. |
-| **Midpoint Computation** | `mid = low + (high - low) // 2` (Integer division operator `//` prevents floats). | `(low + high) >>> 1` (Bitwise unsigned shift truncates to integer and prevents overflow). | `mid = low + (high - low) / 2` (Typed integer division without overflow). |
+| **Midpoint Computation** | `mid = low + (high - low) // 2` (Integer division operator `//` prevents floats). | `mid = low + Math.floor((high - low) / 2)` (Arithmetic division avoiding 32-bit bitwise wrap on large sparse indices). | `mid = low + (high - low) / 2` (Typed integer division without overflow). |
 | **Array Slicing** | Slicing creates shallow copied sublists automatically. | `slice(start, end)` creates shallow array copies. | Slicing is manual; usually avoided by passing reference indices `left, right` to prevent vector reallocation. |
 
 ---
@@ -65,7 +67,7 @@ Refer to [`usage.txt`](usage.txt) for copy-pasteable execution and compilation i
 2. **Integer Overflow:**
    - In C++, standard integer addition `(low + high)` could overflow 32-bit signed integers if array sizes exceed $2^{30}$. This is safeguarded by using `low + (high - low) / 2`.
    - In Python 3, integers have arbitrary precision (bignums), eliminating arithmetic overflow.
-   - In JavaScript, numbers are IEEE 754 double-precision floats; `(low + high) >>> 1` treats operands as 32-bit unsigned integers.
+   - In JavaScript, numbers are IEEE 754 double-precision floats (safe integers up to $2^{53} - 1$); using arithmetic `low + Math.floor((high - low) / 2)` prevents 32-bit truncation caused by bitwise shift operators on large sparse array indices.
 
 ---
 
