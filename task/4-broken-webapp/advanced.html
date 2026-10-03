@@ -68,19 +68,20 @@
       try {
         const response = await fetch("/api/submit", {
           method: "POST",
-          headers: {
-          },
-          body: JSON.stringify({ Fname, mail, message }), 
+          headers: {"Content-Type":
+          "application/json"},
+          body: JSON.stringify({ name, email, message }), 
         });
+        
 
-        const result = await response.text();
+        const result = await response.json();
 
-        if (result.success) {
+        if (response.ok && result.success) {
           statusBox.className = "success";
           statusBox.textContent = `Submitted Successfully!`;
         } else {
           statusBox.className = "error";
-          statusBox.textContent = `Server error: ${result.error}`;
+          statusBox.textContent = `Server error: ${result.error ?? response.status}`;
         }
       } catch (err) {
         statusBox.className = "error";
@@ -101,7 +102,7 @@
           .map(
             (item) => `
               <div class="entry">
-                <strong>${item.FName}</strong> — ${item.contact}<br/>   
+                <strong>${item.Name}</strong> — ${item.email}<br/>   
                 <em>${item.message}</em><br/>
               </div>`
           )
