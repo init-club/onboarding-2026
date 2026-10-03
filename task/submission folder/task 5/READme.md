@@ -1,0 +1,5 @@
+-process of completing the task 5 
+-I containerized the task 4 application using the podman in my laptop using commands
+-podman build and podman run and podman ps commands
+-i created the docker file and .dockerignore file inside task 4 folder and applied containerizing in that -folder
+-and after containerizing the app i tested the task 4 application again to make sure it worked
